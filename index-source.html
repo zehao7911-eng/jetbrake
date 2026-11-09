@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#172d43"><meta name="description" content="Brake your descent and touch down softly in six bright 3D rooftop drops.">
+<title>JETBRAKE</title><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="game">
+<canvas id="flight" aria-label="Jetpack pilot above the city. Hold to brake."></canvas>
+<header class="hud">
+<div class="flightInfo"><strong>JET<span>BRAKE</span></strong><small id="site"></small></div>
+<div class="telemetry"><b id="height">56 m</b><span id="speed">↓ 7 m/s</span></div>
+<button class="icon" id="menuButton" aria-label="Open menu">☰</button>
+</header>
+<div id="fuel" role="meter" aria-label="Fuel" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><span aria-hidden="true">⛽</span><i id="fuelFill"></i></div>
+<div id="prompt" class="prompt"><p id="hint">Hold when yellow.</p><button id="action" class="primary">Drop ↓</button></div>
+<div id="impact" aria-hidden="true"></div>
+<div id="fallback" hidden><p>WebGL is needed to play JETBRAKE.</p><button class="primary" id="retryView">Reload</button></div>
+</main>
+<dialog id="menu" aria-labelledby="menuTitle">
+<div class="dialogHead"><h2 id="menuTitle">Drops</h2><button class="icon" id="closeMenu" aria-label="Close menu">×</button></div>
+<div class="tools"><button id="restart">Restart</button><button id="sound" aria-pressed="true">Sound on</button></div>
+<div id="routes"></div><div id="coats"></div><p id="perks" hidden></p>
+</dialog>
+<dialog id="result" aria-labelledby="resultTitle">
+<div class="dialogHead"><h2 id="resultTitle"></h2><button class="icon" id="closeResult" aria-label="Close result">×</button></div>
+<div id="stars"></div><p id="report"></p><button id="next" class="primary"></button>
+</dialog>
+<script src="vendor/three.min.js"></script>
+<script type="module" src="app.mjs"></script>
+</body></html>
